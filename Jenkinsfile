@@ -1,5 +1,7 @@
-node{
-    stage('Git Code Cheeckout'){
+pipeline{
+    agent any
+    stages{
+        stage('Git Code Cheeckout'){
         git 'https://github.com/bharathj0/star-agile-insurance-project.git'
     }
     stage('Code Compile'){
@@ -11,4 +13,5 @@ node{
     stage('Code Building'){
         sh 'mvn clean package'
     }
+}
 }
